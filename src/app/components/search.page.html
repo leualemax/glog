@@ -1,0 +1,24 @@
+<ion-app>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>
+        Glog
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+
+    <ion-searchbar debouce="3000" (ionChange)="search()" [(ngModel)]="searchTerm"></ion-searchbar>
+
+
+    <ion-list>
+      <ion-item *ngFor="let game of (games$|async).list" (click)="presentModal(game)" >
+        <ion-avatar>
+          <ion-img [src]="game.image.thumb_url"></ion-img>
+        </ion-avatar>
+        <ion-label> {{game.name}} </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-app>

@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Game Profile</ion-title>
+    <ion-button size="small" (click)="dismiss()" slot="end">
+      <ion-icon slot="icon-only" name="close"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  
+  <ion-card>
+    <ion-img [src]="game.image.original_url"></ion-img>
+    <ion-card-header>
+      <ion-card-subtitle>{{game.original_release_date}}</ion-card-subtitle>
+      <ion-card-title>{{game.name}}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      {{game.deck}}
+    </ion-card-content>
+
+    <ion-card-content>
+      <ion-note slot="end">
+        <ion-chip *ngFor="let platform of game.platforms">{{platform.name}}</ion-chip>
+      </ion-note>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,6 +1,8 @@
 {
   "name": "glog",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular",
   "id": "41325efa"
 }
